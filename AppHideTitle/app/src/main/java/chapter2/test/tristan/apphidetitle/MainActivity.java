@@ -1,8 +1,10 @@
 package chapter2.test.tristan.apphidetitle;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +28,24 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button btn2 = (Button) findViewById(R.id.btnStartNormal);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent normal = new Intent();
+                normal.setClass(MainActivity.this,NormalActivity.class);
+                startActivity(normal);
+            }
+        });
+        Button btn3 = (Button) findViewById(R.id.btnStartdialog);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dialog = new Intent();
+                dialog.setClass(MainActivity.this,DialogActivity.class);
+                startActivity(dialog);
+            }
+        });
     }
 
     @Override
@@ -40,6 +60,43 @@ public class MainActivity extends Activity {
 
         }
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        Log.d("TAG ","onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d("TAG ","onResume");
+        super.onResume();
+    }
+
+    @Override
+    protected void onPostResume() {
+        Log.d("TAG ","onPostResume");
+        super.onPostResume();
+    }
+
+    @Override
+    protected void onPause(){
+        Log.d("TAG ","onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+
+        Log.d("TAG ","onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d("TAG ","onDestroy");
+        super.onDestroy();
     }
 
     @Override

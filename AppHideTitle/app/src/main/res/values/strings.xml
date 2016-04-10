@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AppHideTitle</string>
+    <string name="title_activity_normal">NormalActivity</string>
 </resources>
